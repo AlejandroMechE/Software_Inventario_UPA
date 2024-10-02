@@ -89,3 +89,6 @@
     -fx-background-radius: 30px;
     -fx-border-style:solid  
 }
+.btnDone {
+    -fx-background-color:blue;
+}
