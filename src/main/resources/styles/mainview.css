@@ -1,0 +1,91 @@
+    .side_ankerpane {
+    -fx-background-color: rgba(0, 115, 86, 1); /* 1 is for full opacity */
+    -fx-border-color: #DADAE3;
+    -fx-padding-color:#DADAE3;    
+    -fx-border-width: 10px 10px 10px 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+    -fx-border-style:solid;  
+}
+.inner_pane{
+    -fx-background-color: #F6F6F6;
+    -fx-border-color: #F6F6F6;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-style:solid;  
+}
+.most_inner_pane{
+    -fx-background-color: #F6F6F6;
+    -fx-border-color: #F6F6F6;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style:solid;  
+}
+.root{
+    -fx-background-color: #DADAE3;
+}
+.btn_inicio{
+  -fx-background-color: rgba(0, 115, 86, 1);  
+ -fx-background-color: transparent; /* Transparent background */
+    -fx-background-insets: 0;          /* Removes any padding on the background */
+    -fx-border-color: transparent;     /* Transparent border */
+    -fx-border-width: 0;               /* Removes any visible border */
+    -fx-padding: 0;                    /* Removes any internal padding */
+    -fx-focus-color: transparent;      /* Removes the focus border */
+    -fx-faint-focus-color: transparent;/* Removes faint focus */
+  -fx-padding: 10px;
+  -fx-font-family: "Century Gothic";  /* Change to your desired font */
+  -fx-font-size: 25px;        /* Change to your desired size */
+ 
+}
+.btn_home{
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-border-width: 10px 10px 10px 10px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-style:solid;  
+      -fx-font-family: "Century Gothic";  /* Change to your desired font */
+      -fx-font-size: 14px;        /* Change to your desired size */
+      -fx-text-fill: black;
+}
+.top_pane{
+    -fx-background-color: white; /* 1 is for full opacity */
+    -fx-border-color: white;
+    -fx-padding-color:white;    
+    -fx-border-width: 10px 10px 10px 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style:solid;  
+}
+.search_bar{
+    -fx-background-color: white; /* 1 is for full opacity */
+    -fx-border-color: #F6F6F6;
+    -fx-padding-color: #F6F6F6;    
+    -fx-border-width: 10px 10px 10px 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style:solid;   
+}
+.btn_search{
+    -fx-background-color: transparent;  
+ -fx-background-color: transparent; /* Transparent background */
+    -fx-background-insets: 0;          /* Removes any padding on the background */
+    -fx-border-color: transparent;     /* Transparent border */
+    -fx-border-width: 0;               /* Removes any visible border */
+    -fx-padding: 0;                    /* Removes any internal padding */
+    -fx-focus-color: transparent;      /* Removes the focus border */
+    -fx-faint-focus-color: transparent;/* Removes faint focus */
+  -fx-padding: 10px;
+}
+.pane_content{
+     -fx-background-color: white; /* 1 is for full opacity */
+    -fx-border-color: #DADAE3;
+    -fx-padding-color:#DADAE3;    
+    -fx-border-width: 10px 10px 10px 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+    -fx-border-style:solid  
+}
