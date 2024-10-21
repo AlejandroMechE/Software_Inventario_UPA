@@ -21,5 +21,8 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('apps.authenticate.urls')),
+    path('products/', include('apps.products.urls')),
+    path('clients/', include('apps.clients.urls')),
+    path('sales/', include('apps.sales.urls')),
     path('docs/', include_docs_urls(title="Inventory API")),
 ]
