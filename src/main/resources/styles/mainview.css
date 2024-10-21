@@ -82,11 +82,11 @@
 }
 .pane_content{
      -fx-background-color: white; /* 1 is for full opacity */
-    -fx-border-color: #DADAE3;
+    -fx-border-color: white;
     -fx-padding-color:#DADAE3;    
     -fx-border-width: 10px 10px 10px 10px;
     -fx-border-radius: 20px;
-    -fx-background-radius: 30px;
+    -fx-background-radius: 20px;
     -fx-border-style:solid  
 }
 .btnDone {
