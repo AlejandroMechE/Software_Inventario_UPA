@@ -8,8 +8,8 @@ class Sale(models.Model):
     cost = models.BigIntegerField(verbose_name="cost")
 
     class Meta:
-        verbose_name = 'Sale'
-        verbose_name_plural = 'Sales'
+        verbose_name = 'Venta'
+        verbose_name_plural = 'Ventas'
 
     def __str__(self):
         return self.sale_date
@@ -19,8 +19,8 @@ class DailySales(models.Model):
     cost = models.BigIntegerField(verbose_name="cost")
 
     class Meta:
-        verbose_name = 'DailySales'
-        verbose_name_plural = 'DailySaless'
+        verbose_name = 'Venta del día'
+        verbose_name_plural = 'Ventas del día'
 
     def __str__(self):
         pass
