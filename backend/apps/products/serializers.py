@@ -6,3 +6,13 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = '__all__'
+
+class ProductNameSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = [
+            'id',
+            'name',
+            
+        ]
