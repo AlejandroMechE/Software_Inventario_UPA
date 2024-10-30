@@ -30,9 +30,9 @@ public class App extends Application {
         primaryStage.show();
         
         //asigamos controlador
-        LoginController controller = loader.getController();
-        controller.setStage(primaryStage);
-        primaryStage.show();
+//        LoginController controller = loader.getController();
+//        controller.setStage(primaryStage);
+//        primaryStage.show();
     }
 
     // Cambiar la raíz de la escena, en caso de necesitar cambiar la ventana
