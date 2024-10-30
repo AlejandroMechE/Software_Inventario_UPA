@@ -42,8 +42,13 @@ void ValidationFields(ActionEvent event) throws IOException {
     System.out.println(valuePassword);
     
    
-    if ( "up230328".equals(valueUser) && "holaUpa24".equals(valuePassword) ){
+    if ( "root".equals(valueUser) && "root".equals(valuePassword) ){
         System.out.println("Exito");
+        
+        
+        
+        
+        
     //    else if( ! valueUser.matches(regex) ){
 //          System.out.println("Error: El nombre de usuario solo puede contener letras y números.");
 //    }
@@ -51,7 +56,7 @@ void ValidationFields(ActionEvent event) throws IOException {
 //        System.out.println("Error: ");
 //    }
     
-        // Cargar la nueva vista desde el archivo FXML
+//         Cargar la nueva vista desde el archivo FXML
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
     Parent root = loader.load();
 
