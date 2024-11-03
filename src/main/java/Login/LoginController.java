@@ -57,7 +57,7 @@ void ValidationFields(ActionEvent event) throws IOException {
 //    }
     
 //         Cargar la nueva vista desde el archivo FXML
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlIevtarioForm.fxml"));
     Parent root = loader.load();
 
     // Crear una nueva escena y establecerla en un nuevo Stage

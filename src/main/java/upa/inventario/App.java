@@ -16,7 +16,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Cargar el archivo FXML para "Login.fxml"
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InventarioForm.fxml"));
         Parent root = loader.load();
 
         // Crear la escena

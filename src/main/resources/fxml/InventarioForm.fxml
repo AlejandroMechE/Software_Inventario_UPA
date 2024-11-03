@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="835.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="upa.inventario.InventarioFormController">
+    <stylesheets>
+        <URL value="@/styles/inventarioform.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="NombreField" layoutX="215.0" layoutY="105.0" />
+      <Button fx:id="formBtn" layoutX="96.0" layoutY="105.0" mnemonicParsing="false" onAction="#PostServer" text="Button" />
+      <Text layoutX="221.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de Producto" wrappingWidth="169.13671875" />
+   </children>
+</AnchorPane>
