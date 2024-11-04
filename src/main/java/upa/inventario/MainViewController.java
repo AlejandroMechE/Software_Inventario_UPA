@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class MainViewController {
 
 
+
     @FXML
     private Button BtnNewCrud;
 
@@ -33,6 +34,9 @@ public class MainViewController {
     private Button BtnNewCrud112;
 
     @FXML
+    private Button BtnNewCrud12;
+
+    @FXML
     private Pane PaneClients;
 
     @FXML
@@ -40,6 +44,9 @@ public class MainViewController {
 
     @FXML
     private Pane PaneMontlySales;
+
+    @FXML
+    private Pane PaneProviders;
 
     @FXML
     private Pane PaneSales;
@@ -55,6 +62,9 @@ public class MainViewController {
 
     @FXML
     private TableView<?> TableCrud111;
+
+    @FXML
+    private TableView<?> TableCrud12;
 
     @FXML
     private Button btn_home;
@@ -130,6 +140,7 @@ public class MainViewController {
       PaneClients.setVisible(false);
       PaneSales.setVisible(false);
       PaneMontlySales.setVisible(false);
+      PaneProviders.setVisible(false);
       
 //    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
 //    Parent root = loader.load();
@@ -156,11 +167,12 @@ public class MainViewController {
       PaneClients.setVisible(false);
       PaneSales.setVisible(false);
       PaneMontlySales.setVisible(false);
+      PaneProviders.setVisible(false);
         
     }
 
         @FXML
-    void GoNewProvider(ActionEvent event) throws IOException {
+    void GoNewProduct(ActionEvent event) throws IOException {
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InventoryForm.fxml"));
     Parent root = loader.load();
@@ -169,6 +181,7 @@ public class MainViewController {
     Scene scene = new Scene(root);
     newStage.setScene(scene);
     newStage.show();
+   
     }
     
         @FXML
@@ -184,6 +197,7 @@ public class MainViewController {
       PaneCrud.setVisible(false);  
       PaneSales.setVisible(false);
       PaneMontlySales.setVisible(false);
+      PaneProviders.setVisible(false);
     }
         @FXML
     void GoNewClient(ActionEvent event) throws IOException {
@@ -210,6 +224,7 @@ public class MainViewController {
       PaneCrud.setVisible(false);  
       PaneSales.setVisible(true);
       PaneMontlySales.setVisible(false);
+      PaneProviders.setVisible(false);
     }
        @FXML
     void GoToMontlySales(ActionEvent event) {
@@ -225,12 +240,40 @@ public class MainViewController {
       PaneCrud.setVisible(false);  
       PaneSales.setVisible(false);
       PaneMontlySales.setVisible(true);
+      PaneProviders.setVisible(false);
     }
 
     @FXML
     void GoToCorte(ActionEvent event) throws IOException {
 
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/NewSales.fxml"));
+    Parent root = loader.load();
+    
+    Stage newStage = new Stage();
+    Scene scene = new Scene(root);
+    newStage.setScene(scene);
+    newStage.show();
+    }
+        @FXML
+    void GoProvider(ActionEvent event) {
+
+      pane_content1.setVisible(false);
+      pane_content2.setVisible(false);
+      pane_content1111.setVisible(false);
+      pane_content111.setVisible(false);
+      pane_content11.setVisible(false);
+      
+      PaneClients.setVisible(false);
+      top_pane.setVisible(true);
+      PaneCrud.setVisible(false);  
+      PaneSales.setVisible(false);
+      PaneMontlySales.setVisible(false);
+      PaneProviders.setVisible(true);
+    }
+        @FXML
+    void GoNewProvider(ActionEvent event) throws IOException {
+
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/NewProviderForm.fxml"));
     Parent root = loader.load();
     
     Stage newStage = new Stage();
