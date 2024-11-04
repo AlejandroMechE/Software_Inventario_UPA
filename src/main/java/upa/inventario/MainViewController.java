@@ -27,10 +27,16 @@ public class MainViewController {
     private Button BtnNewCrud11;
 
     @FXML
+    private Button BtnNewCrud111;
+
+    @FXML
     private Pane PaneClients;
 
     @FXML
     private Pane PaneCrud;
+
+    @FXML
+    private Pane PaneMontlySales;
 
     @FXML
     private Pane PaneSales;
@@ -43,6 +49,9 @@ public class MainViewController {
 
     @FXML
     private TableView<?> TableCrud11;
+
+    @FXML
+    private TableView<?> TableCrud111;
 
     @FXML
     private Button btn_home;
@@ -89,6 +98,7 @@ public class MainViewController {
     @FXML
     private Pane top_pane;
 
+
     
     
 //    public void hidePanes() {
@@ -116,6 +126,7 @@ public class MainViewController {
       top_pane.setVisible(true);
       PaneClients.setVisible(false);
       PaneSales.setVisible(false);
+      PaneMontlySales.setVisible(false);
       
 //    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
 //    Parent root = loader.load();
@@ -141,6 +152,7 @@ public class MainViewController {
       top_pane.setVisible(false);
       PaneClients.setVisible(false);
       PaneSales.setVisible(false);
+      PaneMontlySales.setVisible(false);
         
     }
 
@@ -168,6 +180,7 @@ public class MainViewController {
       top_pane.setVisible(true);
       PaneCrud.setVisible(false);  
       PaneSales.setVisible(false);
+      PaneMontlySales.setVisible(false);
     }
         @FXML
     void GoNewClient(ActionEvent event) throws IOException {
@@ -193,6 +206,23 @@ public class MainViewController {
       top_pane.setVisible(true);
       PaneCrud.setVisible(false);  
       PaneSales.setVisible(true);
+      PaneMontlySales.setVisible(false);
     }
+       @FXML
+    void GoToMontlySales(ActionEvent event) {
+
+      pane_content1.setVisible(false);
+      pane_content2.setVisible(false);
+      pane_content1111.setVisible(false);
+      pane_content111.setVisible(false);
+      pane_content11.setVisible(false);
+      
+      PaneClients.setVisible(false);
+      top_pane.setVisible(true);
+      PaneCrud.setVisible(false);  
+      PaneSales.setVisible(false);
+      PaneMontlySales.setVisible(true);
+    }
+
     
 }
