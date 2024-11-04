@@ -6,8 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="upa.inventario.InventoryFormController">
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="upa.inventario.InventoryFormController">
    <children>
       <TextField alignment="CENTER" layoutX="43.0" layoutY="128.0" promptText="00000000000000" />
       <Text fill="#0c4d79" layoutX="227.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese nuevo producto">
@@ -86,10 +85,6 @@
          </font>
       </Text>
       <TextField alignment="CENTER" layoutX="485.0" layoutY="370.0" promptText="dd/mm/aaaa" />
-      <Button layoutX="316.0" layoutY="468.0" mnemonicParsing="false" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold Italic" size="24.0" />
-         </font>
-      </Button>
+      <Button layoutX="316.0" layoutY="468.0" mnemonicParsing="false" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER" />
    </children>
 </AnchorPane>
