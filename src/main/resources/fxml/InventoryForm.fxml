@@ -60,7 +60,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="provedorProducto" alignment="CENTER" layoutX="274.0" layoutY="284.0" prefWidth="152.0" promptText="Nadro" />
+      <TextField fx:id="provedorProducto" alignment="CENTER" layoutX="284.0" layoutY="283.0" prefWidth="152.0" promptText="Nadro" />
       <Text layoutX="525.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ubicación" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
@@ -85,10 +85,11 @@
          </font>
       </Text>
       <TextField fx:id="fechaRestablecimiento" alignment="CENTER" layoutX="485.0" layoutY="370.0" promptText="dd/mm/aaaa" />
-      <Button fx:id="btnPost" layoutX="296.0" layoutY="468.0" mnemonicParsing="false" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER">
+      <Button fx:id="btnPost" layoutX="291.0" layoutY="444.0" mnemonicParsing="false" onAction="#PostServer" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Button>
+      <TextField fx:id="fechaRe" alignment="CENTER" layoutX="485.0" layoutY="370.0" promptText="dd/mm/aaaa" />
    </children>
 </AnchorPane>
