@@ -247,6 +247,7 @@
                      </font>
                   </Label>
                   <Button fx:id="BtnNewCrud11" layoutX="62.0" layoutY="543.0" mnemonicParsing="false" onAction="#GoToMontlySales" text="Ventas del mes" />
+                  <Button fx:id="BtnNewCrud112" layoutX="690.0" layoutY="542.0" mnemonicParsing="false" onAction="#GoToCorte" text="Corte del dia " />
                </children>
             </Pane>
             <Pane fx:id="PaneMontlySales" layoutX="2.0" layoutY="115.0" prefHeight="729.0" prefWidth="833.0" styleClass="pane_content" visible="false">

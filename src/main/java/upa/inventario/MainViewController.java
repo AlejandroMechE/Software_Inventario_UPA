@@ -30,6 +30,9 @@ public class MainViewController {
     private Button BtnNewCrud111;
 
     @FXML
+    private Button BtnNewCrud112;
+
+    @FXML
     private Pane PaneClients;
 
     @FXML
@@ -224,5 +227,16 @@ public class MainViewController {
       PaneMontlySales.setVisible(true);
     }
 
+    @FXML
+    void GoToCorte(ActionEvent event) throws IOException {
+
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/NewSales.fxml"));
+    Parent root = loader.load();
+    
+    Stage newStage = new Stage();
+    Scene scene = new Scene(root);
+    newStage.setScene(scene);
+    newStage.show();
+    }
     
 }
