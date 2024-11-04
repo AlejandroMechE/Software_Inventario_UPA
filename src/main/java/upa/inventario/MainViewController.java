@@ -116,7 +116,7 @@ public class MainViewController {
 //        PaneCrud.setVisible(true);
 //    }
 
-    @FXML
+@FXML
     void goWarehouse(ActionEvent event) throws IOException {
       
       pane_content1.setVisible(false);
@@ -142,7 +142,7 @@ public class MainViewController {
         
     }
     
-      @FXML
+@FXML
     void GoHome(ActionEvent event) {
         
       pane_content1.setVisible(true);
