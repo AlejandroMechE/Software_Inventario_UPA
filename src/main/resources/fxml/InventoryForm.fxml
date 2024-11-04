@@ -6,10 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="upa.inventario.InventoryFormController">
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="upa.inventario.InventoryFormController">
    <children>
-      <TextField alignment="CENTER" layoutX="43.0" layoutY="128.0" promptText="00000000000000" />
+      <TextField fx:id="codigoBarraProducto" alignment="CENTER" layoutX="49.0" layoutY="126.0" promptText="00000000000000" />
       <Text fill="#0c4d79" layoutX="227.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese nuevo producto">
          <font>
             <Font size="25.0" />
@@ -20,7 +19,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="284.0" layoutY="126.0" promptText="Neo-melubrina" />
+      <TextField fx:id="nombreProductoPro" alignment="CENTER" layoutX="284.0" layoutY="126.0" promptText="Neo-melubrina" />
       <Text layoutX="291.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del producto">
          <font>
             <Font size="14.0" />
@@ -31,62 +30,62 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="478.0" layoutY="127.0" promptText="Marca" />
+      <TextField fx:id="marcaProducto" alignment="CENTER" layoutX="478.0" layoutY="127.0" promptText="Marca" />
       <Text layoutX="29.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la fecha de expiración" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="46.0" layoutY="213.0" promptText="dd/mm/aaaa" />
+      <TextField fx:id="expiracionProducto" alignment="CENTER" layoutX="46.0" layoutY="213.0" promptText="dd/mm/aaaa" />
       <Text layoutX="282.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción del producto" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="276.0" layoutY="211.0" prefWidth="152.0" promptText="Para el tratamiento del dolor severo y fiebre refractaria." />
+      <TextField fx:id="descripcionProducto" alignment="CENTER" layoutX="276.0" layoutY="211.0" prefWidth="152.0" promptText="Para el tratamiento del dolor severo y fiebre refractaria." />
       <Text layoutX="492.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Existencias mínimas" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="477.0" layoutY="211.0" prefWidth="152.0" promptText="6" />
+      <TextField fx:id="exiMinima" alignment="CENTER" layoutX="477.0" layoutY="211.0" prefWidth="152.0" promptText="6" />
       <Text layoutX="94.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Existencias" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="49.0" layoutY="283.0" promptText="1000" />
+      <TextField fx:id="exiActual" alignment="CENTER" layoutX="49.0" layoutY="283.0" promptText="1000" />
       <Text layoutX="321.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proveedor" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="274.0" layoutY="284.0" prefWidth="152.0" promptText="Nadro" />
-      <Text layoutX="526.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ubicación" textAlignment="CENTER">
+      <TextField fx:id="provedorProducto" alignment="CENTER" layoutX="274.0" layoutY="284.0" prefWidth="152.0" promptText="Nadro" />
+      <Text layoutX="525.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ubicación" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="479.0" layoutY="293.0" prefWidth="152.0" promptText="Lado izquiero, cajon no.3" />
+      <TextField fx:id="ubicacioProducto" alignment="CENTER" layoutX="477.0" layoutY="283.0" prefWidth="152.0" promptText="Lado izquiero, cajon no.3" />
       <Text layoutX="92.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descuento" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="45.0" layoutY="369.0" promptText="10%" />
+      <TextField fx:id="descuentoProducto" alignment="CENTER" layoutX="45.0" layoutY="369.0" promptText="10%" />
       <Text layoutX="324.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="279.0" layoutY="371.0" promptText="Analgésicos" />
+      <TextField fx:id="categoriaProducto" alignment="CENTER" layoutX="279.0" layoutY="371.0" promptText="Analgésicos" />
       <Text layoutX="454.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la fecha de reabastecimiento" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="485.0" layoutY="370.0" promptText="dd/mm/aaaa" />
-      <Button layoutX="316.0" layoutY="468.0" mnemonicParsing="false" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER">
+      <TextField fx:id="fechaRestablecimiento" alignment="CENTER" layoutX="485.0" layoutY="370.0" promptText="dd/mm/aaaa" />
+      <Button fx:id="btnPost" layoutX="296.0" layoutY="468.0" mnemonicParsing="false" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
