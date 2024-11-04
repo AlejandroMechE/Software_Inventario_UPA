@@ -63,7 +63,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="button_inicio21" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="300.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="177.0" styleClass="btn_inicio" stylesheets="@../styles/mainview.css" text="Ventas">
+                  <Button fx:id="button_inicio21" alignment="CENTER" contentDisplay="CENTER" layoutX="51.0" layoutY="300.0" mnemonicParsing="false" onAction="#GoToSales" prefHeight="58.0" prefWidth="177.0" styleClass="btn_inicio" stylesheets="@../styles/mainview.css" text="Ventas">
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -225,6 +225,50 @@
                      </font>
                   </Label>
                   <Button fx:id="BtnNewCrud1" layoutX="103.0" layoutY="544.0" mnemonicParsing="false" onAction="#GoNewClient" text="Nuevo" />
+               </children>
+            </Pane>
+            <Pane fx:id="PaneSales" layoutX="2.0" layoutY="114.0" prefHeight="729.0" prefWidth="833.0" styleClass="pane_content" visible="false">
+               <children>
+                  <TableView fx:id="TableCrud11" layoutX="53.0" layoutY="96.0" prefHeight="419.0" prefWidth="735.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="75.0" text="Nombre" />
+                        <TableColumn prefWidth="75.0" text="Marca" />
+                        <TableColumn prefWidth="75.0" text="Categoría" />
+                        <TableColumn prefWidth="75.0" text="Precio" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label contentDisplay="CENTER" layoutX="335.0" layoutY="39.0" text="Ventas Actuales" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BtnNewCrud11" layoutX="62.0" layoutY="543.0" mnemonicParsing="false" onAction="#GoToMontlySales" text="Ventas del mes" />
+               </children>
+            </Pane>
+            <Pane fx:id="PaneMontlySales" layoutX="2.0" layoutY="115.0" prefHeight="729.0" prefWidth="833.0" styleClass="pane_content" visible="false">
+               <children>
+                  <TableView fx:id="TableCrud111" layoutX="53.0" layoutY="96.0" prefHeight="419.0" prefWidth="735.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="75.0" text="Nombre" />
+                        <TableColumn prefWidth="75.0" text="Marca" />
+                        <TableColumn prefWidth="75.0" text="Categoría" />
+                        <TableColumn prefWidth="75.0" text="Precio" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label contentDisplay="CENTER" layoutX="340.0" layoutY="37.0" text="Ventas Del Mes" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="BtnNewCrud111" layoutX="63.0" layoutY="544.0" mnemonicParsing="false" onAction="#GoToSales" text="Atras" />
                </children>
             </Pane>
          </children>
