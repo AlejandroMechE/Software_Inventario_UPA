@@ -97,6 +97,9 @@ void PostServer(ActionEvent event) {
         }
     }
       
+    Stage currentStage = (Stage) btnPost.getScene().getWindow();
+    currentStage.close();
+    
 }
   
     

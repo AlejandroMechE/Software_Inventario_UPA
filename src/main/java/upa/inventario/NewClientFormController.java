@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -97,6 +98,8 @@ void PostClientServer(ActionEvent event) {
             connection.disconnect();
         }
     }
+    Stage currentStage = (Stage) clientes_Post.getScene().getWindow();
+    currentStage.close();
 }
 
     
