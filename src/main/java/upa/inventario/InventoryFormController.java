@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -95,6 +96,7 @@ void PostServer(ActionEvent event) {
             connection.disconnect();
         }
     }
+      
 }
   
     
