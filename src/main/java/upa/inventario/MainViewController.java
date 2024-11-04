@@ -127,7 +127,18 @@ public class MainViewController {
       PaneCrud.setVisible(false);
       top_pane.setVisible(false);
         
-
     }
 
+        @FXML
+    void GoNewProvider(ActionEvent event) throws IOException {
+
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InventoryForm.fxml"));
+    Parent root = loader.load();
+    
+    Stage newStage = new Stage();
+    Scene scene = new Scene(root);
+    newStage.setScene(scene);
+    newStage.show();
+    
+    }
 }

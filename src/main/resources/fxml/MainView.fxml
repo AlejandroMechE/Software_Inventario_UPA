@@ -202,7 +202,7 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BtnNewCrud" layoutX="103.0" layoutY="544.0" mnemonicParsing="false" text="Nuevo" />
+                  <Button fx:id="BtnNewCrud" layoutX="103.0" layoutY="544.0" mnemonicParsing="false" onAction="#GoNewProvider" text="Nuevo" />
                </children>
             </Pane>
          </children>
