@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -25,7 +26,32 @@ import javafx.stage.Stage;
  */
 public class NewClientFormController implements Initializable {
     @FXML
-  private Button clientes_Post;
+    private Button clientes_Post;
+
+    @FXML
+    private TextField direccionCliente;
+
+    @FXML
+    private TextField emailCliente;
+
+    @FXML
+    private TextField enfermedadesClientes;
+
+    @FXML
+    private TextField fechaNacimientoClientes;
+
+    @FXML
+    private TextField medicinasCliente;
+
+    @FXML
+    private TextField nombreCliente;
+
+    @FXML
+    private TextField suscripCliente;
+
+    @FXML
+    private TextField telefonoCliente;
+
   
     /**
      * Initializes the controller class.
@@ -35,18 +61,23 @@ public class NewClientFormController implements Initializable {
         // TODO
     }   
     
-    @FXML
+  @FXML
 void PostClientServer(ActionEvent event) {
-    String valueNombre = "Pepto Bismol";
-    String valueTelefono = "123456789";  // Example value; replace with actual input
-    String valueEnfermedades = "ExampleBrand";  // Example value; replace with actual input
-    String valueMedicinas = "2025-12-31";  // Example value; replace with actual input
-    String valueFechaNacimiento = "1985-07-22";  // Example birthdate, in a standard date format
-    String valueDireccion = "ProviderAddress";  // Example value; replace with actual input
-    String valueEmail = "example@example.com";  // Example email; replace with actual input
-    String valueSus = "Insulina";  // Example subscription
+    
+    String valueNombre = nombreCliente.getText();
+    String valueTelefono = telefonoCliente.getText();  
+    String valueEnfermedades = enfermedadesClientes.getText(); 
+    String valueMedicinas = medicinasCliente.getText();  //
+    String valueFechaNacimiento = fechaNacimientoClientes.getText();  
+    String valueDireccion = emailCliente.getText(); 
+    String valueEmail = suscripCliente.getText(); 
+    String valueSus = direccionCliente.getText();
+    
+    System.out.println(String.format("Nombre: %s, Telefono: %s, Fecha de Nacimiento: %s, Email: %s, Suscripción: %s, Dirección: %s, Enfermedades: %s, Medicinas: %s",
+        valueNombre, valueTelefono, valueFechaNacimiento, valueEmail, valueSus, valueDireccion, valueEnfermedades, valueMedicinas));
     
     HttpURLConnection connection = null;
+   
     try {
         // Create connection
         URL url = new URL("http://127.0.0.1:8000/clients/Client/");
