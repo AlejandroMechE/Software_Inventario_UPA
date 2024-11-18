@@ -29,7 +29,7 @@ public class NewClientFormController implements Initializable {
     private Button clientes_Post;
 
     @FXML
-    private TextField direccionCliente;
+    private TextField direccionClientes;
 
     @FXML
     private TextField emailCliente;
@@ -41,7 +41,7 @@ public class NewClientFormController implements Initializable {
     private TextField fechaNacimientoClientes;
 
     @FXML
-    private TextField medicinasCliente;
+    private TextField medicinasClientes;
 
     @FXML
     private TextField nombreCliente;
@@ -65,15 +65,15 @@ public class NewClientFormController implements Initializable {
 void PostClientServer(ActionEvent event) {
     
     String valueNombre = nombreCliente.getText();
-    String valueTelefono = telefonoCliente.getText();  
+    Integer valueTelefono = Integer.parseInt(telefonoCliente.getText());
     String valueEnfermedades = enfermedadesClientes.getText(); 
-    String valueMedicinas = medicinasCliente.getText();  //
+    String valueMedicinas = medicinasClientes.getText();  //
     String valueFechaNacimiento = fechaNacimientoClientes.getText();  
     String valueDireccion = emailCliente.getText(); 
     String valueEmail = suscripCliente.getText(); 
-    String valueSus = direccionCliente.getText();
+    String valueSus = direccionClientes.getText();
     
-    System.out.println(String.format("Nombre: %s, Telefono: %s, Fecha de Nacimiento: %s, Email: %s, Suscripción: %s, Dirección: %s, Enfermedades: %s, Medicinas: %s",
+    System.out.println(String.format("Nombre: %s, Telefono: $i, Fecha de Nacimiento: %s, Email: %s, Suscripción: %s, Dirección: %s, Enfermedades: %s, Medicinas: %s",
         valueNombre, valueTelefono, valueFechaNacimiento, valueEmail, valueSus, valueDireccion, valueEnfermedades, valueMedicinas));
     
     HttpURLConnection connection = null;
@@ -90,7 +90,7 @@ void PostClientServer(ActionEvent event) {
 
         // Prepare JSON data
         String jsonInputString = String.format(
-            "{\"name\": \"%s\", \"phone\": \"%s\", \"birthdate\": \"%s\", \"email\": \"%s\", \"suscription\": \"%s\", \"address\": \"%s\", \"diseases\": \"%s\", \"medicines\": \"%s\"}",
+            "{\"name\": \"%s\", \"phone\": \"%d\", \"birthdate\": \"%s\", \"email\": \"%s\", \"suscription\": \"%s\", \"address\": \"%s\", \"diseases\": \"%s\", \"medicines\": \"%s\"}",
             valueNombre, valueTelefono, valueFechaNacimiento, valueEmail, valueSus, valueDireccion, valueEnfermedades, valueMedicinas
         );
 
