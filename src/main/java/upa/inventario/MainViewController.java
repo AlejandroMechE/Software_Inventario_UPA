@@ -1,12 +1,19 @@
 package upa.inventario;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -15,9 +22,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class MainViewController {
-
-
-
     @FXML
     private Button BtnNewCrud;
 
@@ -55,9 +59,6 @@ public class MainViewController {
     private TableView<?> TableCrud;
 
     @FXML
-    private TableView<?> TableCrud1;
-
-    @FXML
     private TableView<?> TableCrud11;
 
     @FXML
@@ -85,6 +86,24 @@ public class MainViewController {
     private Button button_inicio211;
 
     @FXML
+    private TableView<?> clientTable;
+
+    @FXML
+        private TableColumn<?, ?> direccionColumn;
+
+    @FXML
+        private TableColumn<?, ?> nombreColumn;
+   
+    @FXML
+        private TableColumn<?, ?> recetaColumn;
+    
+    @FXML
+        private TableColumn<?, ?> verColumn;
+      
+    @FXML
+        private TableColumn<?, ?> telefonoColumn;
+
+  @FXML
     private Pane pane_content1;
 
     @FXML
@@ -99,6 +118,7 @@ public class MainViewController {
     @FXML
     private Pane pane_content2;
 
+ 
     @FXML
     private HBox root;
 
@@ -108,23 +128,15 @@ public class MainViewController {
     @FXML
     private AnchorPane side_ankerpane;
 
+    
+
     @FXML
     private Pane top_pane;
 
+   
 
-    
-    
-//    public void hidePanes() {
-//        pane_content1.setVisible(false);
-//        pane_content2.setVisible(false);
-//        pane_content1111.setVisible(false);
-//        pane_content111.setVisible(false);
-//        pane_content11.setVisible(false);
-//    }
-//
-//    public void showPaneCrud() {
-//        PaneCrud.setVisible(true);
-//    }
+
+   
 
 @FXML
     void goWarehouse(ActionEvent event) throws IOException {
@@ -142,14 +154,6 @@ public class MainViewController {
       PaneMontlySales.setVisible(false);
       PaneProviders.setVisible(false);
       
-//    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
-//    Parent root = loader.load();
-//
-//    // Crear una nueva escena y establecerla en un nuevo Stage
-//    Stage newStage = new Stage();
-//    Scene scene = new Scene(root);
-//    newStage.setScene(scene);
-//    newStage.show();
         
     }
     
@@ -184,21 +188,61 @@ public class MainViewController {
    
     }
     
-        @FXML
-    void GoClients(ActionEvent event) {
-      pane_content1.setVisible(false);
-      pane_content2.setVisible(false);
-      pane_content1111.setVisible(false);
-      pane_content111.setVisible(false);
-      pane_content11.setVisible(false);
-      
-      PaneClients.setVisible(true);
-      top_pane.setVisible(true);
-      PaneCrud.setVisible(false);  
-      PaneSales.setVisible(false);
-      PaneMontlySales.setVisible(false);
-      PaneProviders.setVisible(false);
+      @FXML
+void GoClients(ActionEvent event) {
+    
+    pane_content1.setVisible(false);
+    pane_content2.setVisible(false);
+    pane_content1111.setVisible(false);
+    pane_content111.setVisible(false);
+    pane_content11.setVisible(false);
+    
+    PaneClients.setVisible(true);
+    top_pane.setVisible(true);
+    PaneCrud.setVisible(false);  
+    PaneSales.setVisible(false);
+    PaneMontlySales.setVisible(false);
+    PaneProviders.setVisible(false);
+    
+    HttpURLConnection connection = null;
+    try {
+        // Create connection
+        URL url = new URL("http://127.0.0.1:8000/clients/Client/");
+        connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setRequestProperty("Content-Type", "application/json; utf-8");
+        connection.setRequestProperty("Accept", "application/json");
+
+        // Get response
+        int responseCode = connection.getResponseCode();
+        System.out.println("Response Code: " + responseCode);
+
+        InputStream inputStream;
+        if (responseCode >= 200 && responseCode < 300) {
+            inputStream = connection.getInputStream();
+        } else {
+            inputStream = connection.getErrorStream(); // For non-2xx responses
+        }
+
+        // Read and log the JSON response
+        try (BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream))) {
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = rd.readLine()) != null) {
+                response.append(line);
+                response.append('\r');
+            }
+            System.out.println("Response: " + response.toString()); // Log the JSON response
+        }
+    } catch (IOException e) {
+        e.printStackTrace(); // Log errors for debugging
+    } finally {
+        if (connection != null) {
+            connection.disconnect();
+        }
     }
+}
+
         @FXML
     void GoNewClient(ActionEvent event) throws IOException {
 
