@@ -9,4 +9,5 @@ module upa.inventario {
     opens Login to javafx.fxml;          // Agrega esta línea para abrir el paquete Login
 
     exports upa.inventario;
+    requires org.json;
 }
