@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="upa.inventario.NewClientFormController">
+<AnchorPane id="AnchorPane" fx:id="meicinasBox" prefHeight="387.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="upa.inventario.NewClientFormController">
    <children>
       <TextField fx:id="nombreCliente" alignment="CENTER" layoutX="14.0" layoutY="114.0" promptText="Carlos Pérez Rodríguez" />
       <Text fill="#0c4d79" layoutX="210.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese nuevo cliente">
@@ -36,7 +37,6 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="medicinasClientes" alignment="CENTER" layoutX="14.0" layoutY="199.0" promptText="Paracetamol. Ibuprofeno" />
       <Text layoutX="264.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de nacimiento" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
@@ -62,5 +62,6 @@
       <TextField fx:id="direccionClientes" alignment="CENTER" layoutX="367.0" layoutY="284.0" prefWidth="152.0" promptText="Calle Jacarandas 23, 230464, Aguascalientes, Aguascalientes" />
       <Button fx:id="clientes_Post" layoutX="298.0" layoutY="341.0" mnemonicParsing="false" onAction="#PostClientServer" style="-fx-background-color: #14bb49;" text="Guardar" textAlignment="CENTER" />
       <TextField fx:id="emailCliente" alignment="CENTER" layoutX="483.0" layoutY="199.0" prefWidth="152.0" promptText="ejemplo@ejemplo.com" />
+      <ComboBox fx:id="medicinasBox" layoutX="13.0" layoutY="199.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
