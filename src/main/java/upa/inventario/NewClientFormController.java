@@ -21,11 +21,17 @@ import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
+
+
+
 
 /**
  * FXML Controller class
@@ -33,6 +39,8 @@ import org.json.JSONObject;
  * @author carlo
  */
 public class NewClientFormController implements Initializable {
+    @FXML
+    private TextArea errorTextArea;
     @FXML
     private Button clientes_Post;
 
@@ -60,6 +68,15 @@ public class NewClientFormController implements Initializable {
       @FXML
     private ComboBox<String> medicinasBox;
   
+      
+      
+      
+      
+      
+      
+      
+      
+      
     /**
      * Initializes the controller class.
      */
@@ -75,11 +92,22 @@ public class NewClientFormController implements Initializable {
         // TODO
     }   
 
+    
+    
+    
+    
 // A Map to store product names and IDs
 private Map<String, Integer> productMap = new HashMap<>();
 
 
 
+
+
+
+
+
+
+//populates de comboBox
 private void populateProductDropdown() {
     HttpURLConnection connection = null;
     try {
@@ -138,26 +166,67 @@ private void populateProductDropdown() {
     
     
     
-    
-    
-    @FXML
+      
+@FXML
 void PostClientServer(ActionEvent event) {
+    StringBuilder errorMessages = new StringBuilder(); // Used to accumulate error messages
     
+    // Input validations
     String valueNombre = nombreCliente.getText();
-    Long valueTelefono = Long.parseLong(telefonoCliente.getText());
-    Integer valueEnfermedades = Integer.parseInt(enfermedadesClientes.getText()); 
-    Integer valueMedicinas = productMap.get(medicinasBox.getValue());
-    String valueFechaNacimiento = fechaNacimientoClientes.getText();  
-    String valueEmail = emailCliente.getText(); 
-    String valueSus = suscripCliente.getText(); 
+    if (valueNombre.isEmpty()) {
+        errorMessages.append("El nombre no puede estar vacío.\n");
+    }
+    
+    Long valueTelefono = null;
+    try {
+        valueTelefono = Long.parseLong(telefonoCliente.getText());
+    } catch (NumberFormatException e) {
+        errorMessages.append("El teléfono debe ser un número válido.\n");
+    }
+
+    Integer valueEnfermedades = null;
+    try {
+        valueEnfermedades = Integer.parseInt(enfermedadesClientes.getText());
+    } catch (NumberFormatException e) {
+        errorMessages.append("Las enfermedades deben ser un número válido.\n");
+    }
+
+    Integer valueMedicinas = null;
+    if (medicinasBox.getValue() == null) {
+        errorMessages.append("Seleccione una medicina.\n");
+    } else {
+        valueMedicinas = productMap.get(medicinasBox.getValue());
+    }
+
+    String valueFechaNacimiento = fechaNacimientoClientes.getText();
+    if (valueFechaNacimiento.isEmpty()) {
+        errorMessages.append("La fecha de nacimiento no puede estar vacía.\n");
+    }
+
+    String valueEmail = emailCliente.getText();
+    if (valueEmail.isEmpty() || !valueEmail.contains("@")) {
+        errorMessages.append("Ingrese un correo electrónico válido.\n");
+    }
+
+    String valueSus = suscripCliente.getText();
+    if (valueSus.isEmpty()) {
+        errorMessages.append("La suscripción no puede estar vacía.\n");
+    }
+
     String valueDireccion = direccionClientes.getText();
-    System.out.println(valueMedicinas);
-    
-    System.out.println(String.format("Nombre: %s, Telefono: %d, Fecha de Nacimiento: %s, Email: %s, Suscripción: %s, Dirección: %s, Enfermedades: %d, Medicinas: %d",
-        valueNombre, valueTelefono, valueFechaNacimiento, valueEmail, valueSus, valueDireccion, valueEnfermedades, valueMedicinas));
-    
+    if (valueDireccion.isEmpty()) {
+        errorMessages.append("La dirección no puede estar vacía.\n");
+    }
+
+    // If there are any errors, display them in the TextArea and stop the POST request
+    if (errorMessages.length() > 0) {
+        errorTextArea.setText(errorMessages.toString());
+        return; // Stop the method here to prevent the POST request
+    }
+
+    // If no errors, proceed with the POST request
     HttpURLConnection connection = null;
-   
+
     try {
         // Create connection
         URL url = new URL("http://127.0.0.1:8000/clients/Client/");
@@ -204,14 +273,17 @@ void PostClientServer(ActionEvent event) {
             System.out.println("Response: " + response.toString());
         }
     } catch (IOException e) {
+        errorMessages.append("Ocurrió un error al procesar la solicitud.\n");
+        errorTextArea.setText(errorMessages.toString());
     } finally {
         if (connection != null) {
             connection.disconnect();
         }
     }
-    Stage currentStage = (Stage) clientes_Post.getScene().getWindow();
-    currentStage.close();
+    // If no error occurred, close the window
+    if (errorMessages.length() == 0) {
+        Stage currentStage = (Stage) clientes_Post.getScene().getWindow();
+        currentStage.close();
+    }
 }
-
-    
 }
